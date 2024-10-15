@@ -3,8 +3,8 @@ const path = require('path');
 const cors = require('cors');
 const express = require("express");
 const mongoose = require("mongoose");
-const nodemailer = require("nodemailer"); // Nodemailer para enviar e-mails
-const schedule = require("node-schedule"); // Para agendamento de tarefas
+const nodemailer = require("nodemailer");
+const schedule = require("node-schedule");
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 console.log("MongoDB URI:", process.env.MONGODB_URI);
@@ -34,7 +34,7 @@ const Produto = mongoose.model('produto', {
 const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
-    secure: false, // true para 465, false para outras portas
+    secure: false,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
