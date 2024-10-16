@@ -79,7 +79,7 @@ async function verificarProdutos() {
         produtos.forEach(produto => {
             const diasRestantes = Math.ceil((new Date(produto.validade_produto) - hoje) / (1000 * 60 * 60 * 24));
 
-            if (diasRestantes === 45 || diasRestantes === 15 || diasRestantes == 1) {
+            if (diasRestantes === 45 || diasRestantes === 15) {
                 enviarEmail(produto, diasRestantes);
             }
         });
